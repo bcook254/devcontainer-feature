@@ -1,6 +1,6 @@
 {
     "id": "pip-packages",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "name": "pip packages",
     "documentationURL": "https://github.com/bcook254/devcontainer-features/tree/main/src/pip-packages",
     "description": "The Python package installer.",
