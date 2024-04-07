@@ -1,7 +1,7 @@
 {
     "id": "pip-packages",
     "version": "1.0.0",
-    "name": "pip packages ",
+    "name": "pip packages",
     "documentationURL": "http://git.abcook.me/bcook254/devcontainers/tree/main/features/pip-packages",
     "description": "The Python package installer.",
     "options": {
