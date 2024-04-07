@@ -1,0 +1,17 @@
+{
+    "id": "pip-packages",
+    "version": "1.0.0",
+    "name": "pip packages ",
+    "documentationURL": "http://git.abcook.me/bcook254/devcontainers/tree/main/features/pip-packages",
+    "description": "The Python package installer.",
+    "options": {
+        "packages": {
+            "default": "",
+            "description": "A space delimited list of packages to install via pip",
+            "type": "string"
+        }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/python"
+    ]
+}

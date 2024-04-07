@@ -1,0 +1,15 @@
+{
+    "id": "Podman (from OS)",
+    "version": "1.0.0",
+    "name": "podman-from-os",
+    "documentationURL": "http://git.abcook.me/bcook254/devcontainers/tree/main/features/podman",
+    "description": "Manage containers, pods, and images with Podman. Seamlessly work with containers and Kubernetes from your local environment.",
+    "options": {
+        "version": {
+            "default": "latest",
+            "description": "The version of podman to install.",
+            "proposals": [ "latest" ],
+            "type": "string"
+        }
+    }
+}
