@@ -108,6 +108,7 @@ if [ "$PODMAN_VERSION" != "latest"]
             ;;
         *)
             PACKAGE="${PACKAGE}-${PODMAN_VERSION}"
+            ;;
     esac
 fi
 check_packages $PACKAGE
