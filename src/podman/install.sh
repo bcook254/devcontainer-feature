@@ -101,13 +101,14 @@ if [ $ID = "mariner" ]; then
     check_packages ca-certificates
 fi
 PACKAGE=podman
-if [ "$PODMAN_VERSION" != "latest"]
+if [ "$PODMAN_VERSION" != "latest"]; then
     case "$INSTALL_CMD" in
         "apt-get")
             PACKAGE="${PACKAGE}=${PODMAN_VERSION}"
             ;;
         *)
             PACKAGE="${PACKAGE}-${PODMAN_VERSION}"
+            ;;
     esac
 fi
 check_packages $PACKAGE
