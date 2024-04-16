@@ -11,7 +11,7 @@ elif [[ "${ID}" = "rhel" || "${ID}" = "fedora" || "${ID}" = "mariner" || "${ID_L
     ADJUSTED_ID="rhel"
     VERSION_CODENAME="${ID}{$VERSION_ID}"
 else
-    echo "Linux distro ${ID} not supported."
+    echo "❌ Linux distro ${ID} not supported."
     exit 1
 fi
 
@@ -24,7 +24,7 @@ elif type dnf > /dev/null 2>&1; then
 elif type yum > /dev/null 2>&1; then
     INSTALL_CMD=yum
 else
-    echo "(Error) Unable to find a supported package manager."
+    echo "❌ Unable to find a supported package manager."
     exit 1
 fi
 
@@ -78,7 +78,7 @@ check_packages() {
             --setopt=install_weak_deps=0 \
             "$@"
     else
-        echo "Linux distro ${ID} not supported."
+        echo "❌ Linux distro ${ID} not supported."
         exit 1
     fi
 }
