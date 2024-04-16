@@ -1,6 +1,6 @@
 {
     "id": "pipx-package",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "name": "Pipx Package",
     "documentationURL": "https://github.com/bcook254/devcontainer-features/tree/main/src/pipx-package",
     "description": "Install and run Python applications in isolated environments.",
@@ -36,6 +36,14 @@
             "type": "boolean",
             "default": false,
             "description": "Add apps from injections onto PATH."
+        },
+        "injectionsIncludeDeps": {
+            "type": "boolean",
+            "default": false,
+            "description": "Include dependencies for the injected packages"
         }
-    }
+    },
+    "installsAfter": [
+        "ghcr.io/devcontainers/features/python"
+    ]
 }

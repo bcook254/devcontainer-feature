@@ -102,6 +102,9 @@ pipx_inject() {
     for injection in "${_injections[@]}"
     do
         args=()
+        if [ "${INJECTIONSINCLUDEDEPS}" == "true" ]; then
+            args+=("--include-deps")
+        fi
         if [ "${INCLUDEAPPS}" == "true" ]; then
             args+=("--include-apps")
         fi
