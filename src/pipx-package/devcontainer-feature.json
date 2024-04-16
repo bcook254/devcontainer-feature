@@ -1,0 +1,41 @@
+{
+    "id": "pipx-package",
+    "version": "1.0.0",
+    "name": "Pipx Package",
+    "documentationURL": "https://github.com/bcook254/devcontainer-features/tree/main/src/pipx-package",
+    "description": "Install and run Python applications in isolated environments.",
+    "options": {
+        "package": {
+            "type": "string",
+            "default": "",
+            "proposals": [ "black" ],
+            "description": "The package to install."
+        },
+        "version": {
+            "type": "string",
+            "default": "latest",
+            "proposals": [ "latest" ],
+            "description": "The version to install."
+        },
+        "includeDeps": {
+            "type": "boolean",
+            "default": false,
+            "description": "Include dependencies for the installed packages."
+        },
+        "forceInstall": {
+            "type": "boolean",
+            "default": false,
+            "description": "Force pipx to reinstall the package if it is already installed."
+        },
+        "injections": {
+            "type": "string",
+            "default": "",
+            "description": "A list of packages to inject in the pipx environment, space or command seperated. Injections are installed every time this feature is run."
+        },
+        "includeApps": {
+            "type": "boolean",
+            "default": false,
+            "description": "Add apps from injections onto PATH."
+        }
+    }
+}
