@@ -1,6 +1,6 @@
 {
     "id": "podman",
-    "version": "1.0.3",
+    "version": "1.1.0",
     "name": "Podman (from OS)",
     "documentationURL": "https://github.com/bcook254/devcontainer-features/tree/main/src/podman",
     "description": "Manage containers, pods, and images with Podman. Seamlessly work with containers and Kubernetes from your local environment.",
@@ -9,6 +9,12 @@
             "default": "latest",
             "description": "The version of podman to install.",
             "proposals": [ "latest" ],
+            "type": "string"
+        },
+        "eventsLogger": {
+            "default": "file",
+            "description": "The events logger that podman will be configured to use.",
+            "enum": [ "journald", "file", "none" ],
             "type": "string"
         }
     }

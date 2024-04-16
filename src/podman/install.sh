@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 
 PODMAN_VERSION=${VERSION}
+PODMAN_EVENTS_LOGGER=${EVENTSLOGGER}
 
 # Bring in ID, ID_LIKE, VERSION_ID, VERSION_CODENAME
 . /etc/os-release
@@ -101,7 +102,7 @@ if [ $ID = "mariner" ]; then
     check_packages ca-certificates
 fi
 PACKAGE=podman
-if [ "$PODMAN_VERSION" != "latest"]; then
+if [ "$PODMAN_VERSION" != "latest" ]; then
     case "$INSTALL_CMD" in
         "apt-get")
             PACKAGE="${PACKAGE}=${PODMAN_VERSION}"
@@ -112,5 +113,11 @@ if [ "$PODMAN_VERSION" != "latest"]; then
     esac
 fi
 check_packages $PACKAGE
+
+# Change the default events_logger for podman as most
+# containers do not run systemd/journald
+mkdir -p /etc/containers/containers.conf.d
+printf "[engine]\nevents_logger = \"${PODMAN_EVENTS_LOGGER}\"" > /etc/containers/containers.conf.d/events_logger.conf
+
 # Clean up
 clean_up
